@@ -1,6 +1,9 @@
-# Custom ignores
+# Ignore needed local data
 .secrets/
 .data/
+
+# Ignore the executable
+App
 
 # C++ Template
 # Prerequisites

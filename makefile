@@ -1,8 +1,8 @@
 CXX = g++
+
 MYSQL = mariadb_config
+CXXFLAGS += $(shell $(MYSQL) --cflags) 
+LDFLAGS = $(shell $(MYSQL) --libs) 
 
-CXXFLAGS = $(shell $(MYSQL) --cflags)
-LDFLAGS = $(shell $(MYSQL) --libs)
-
-main: src/main.cpp
+App: src/App.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS)
