@@ -1,7 +1,7 @@
 services:
   mariadb:
     image: mariadb:12.2
-    container_name: collatz_db
+    container_name: mariadb_main
     restart: unless-stopped
     secrets:
       - root_password
