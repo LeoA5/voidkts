@@ -1,4 +1,6 @@
 # Rotate all user passwords in the MariaDB from the host machine
+# All secrets are 32 characters base64 to ensure no password length
+# conflict with MariaDB/MySQL, so they get 3/4(32) = 24 bytes of input.
 set -e
 
 # Load current root@localhost password to use for operations
