@@ -2,6 +2,9 @@
 .secrets/
 .data/
 
+# Ignore caddy secret info
+caddy_config/upstreams.caddy
+
 # Ignore the executable
 App
 

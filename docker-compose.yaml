@@ -1,4 +1,16 @@
 services:
+  caddy:
+    image: caddy:2.11
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+      - "8443:443"
+      - "8443:443/udp"
+    volumes:
+    - ./caddy_config:/etc/caddy/
+    - ./src/frontend:/srv
+    - ./.data/caddy:/data
+    - ./.data/caddy_runtime:/config
   mariadb:
     image: mariadb:12.2
     container_name: mariadb_main
@@ -10,13 +22,13 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./.data:/var/lib/mysql
+      - ./.data/mariadb:/var/lib/mysql
 
   adminer:
     image: adminer
     restart: unless-stopped
     ports:
-      - 8081:8080
+      - "8081:8080"
 
 secrets:
   root_password:

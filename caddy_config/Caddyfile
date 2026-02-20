@@ -1,0 +1,13 @@
+import upstreams.caddy
+
+{
+    email loas5@protonmail.com
+}
+
+localhost {
+    tls internal
+    import test
+    root * /srv
+    file_server
+
+}
