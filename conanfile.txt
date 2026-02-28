@@ -1,0 +1,3 @@
+[requires]
+oatpp/1.3.0
+oatpp-postgresql/1.3.0
