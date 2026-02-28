@@ -1,5 +1,3 @@
-voidkts is a web-service built on top of the oat++ framework, postgres, and flyway. It's designed to be portable, utilizing OCI containers, and private, as it's intended to only allow communication over a mesh VPN such as Tailscale.
+voidkts is a web-service tool that utilizes OCI containers for portability, and communication over a tailscale network for privacy.
 
-The setup relies on some kind of container service with compose support, such as podman-compose or docker. The caddyfile is also explicitly designed to work with tailscale or localhost interfaces only, so that routing will need to change if something else is desired.
-
-Several services use hidden folders or files that are not included in the repository, theres are ./.data/\*, ./.secrets/\*, and upstreams.caddy. Ensure these are configured appropriately.
+Later versions will include a full install script that will ensure tailscale is setup, logged in, and enabled, configure caddy's reverse proxying to use appropriate tailscale host and dns names, setup cron jobs for automatic updates and database secret rotations, and run flyway whenever git updates are detected to ensure database migration and versioning is kept consistent.
