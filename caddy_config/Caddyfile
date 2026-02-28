@@ -4,10 +4,14 @@ import upstreams.caddy
     email loas5@protonmail.com
 }
 
-localhost {
-    tls internal
+# Bind to localhost and tailscale network
+localhost, deb13s.tail9e4ecb.ts.net {
     import test
     root * /srv
     file_server
 
+    handle /api/* {
+        uri strip_prefix /api
+        reverse_proxy api:9000
+    }
 }
