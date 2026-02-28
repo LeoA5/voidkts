@@ -1,11 +1,7 @@
 import upstreams.caddy
 
-{
-    email loas5@protonmail.com
-}
-
-# Bind to localhost and tailscale network
-localhost, deb13s.tail9e4ecb.ts.net {
+# Modify this to include any other domains or ip addresses as desired
+localhost {
     import test
     root * /srv
     file_server
