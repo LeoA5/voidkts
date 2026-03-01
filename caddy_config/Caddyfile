@@ -1,7 +1,12 @@
 import upstreams.caddy
 
+:80 {
+    respond "OK" 200
+}
+
 # Modify this to include any other domains or ip addresses as desired
-localhost {
+localhost, leoas5nixosdesktop.tail9e4ecb.ts.net {
+    tls internal
     import test
     root * /srv
     file_server

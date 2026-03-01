@@ -1,0 +1,12 @@
+# Change this address to the appropriate ip or dns
+base-url: "http://tailscaleDNS:8083"
+
+auth-file: "/var/lib/ntfy/user.db"
+auth-default-access: "deny-all"
+acl-file: "/etc/ntfy/acl.yml"
+
+# Cache messages for 24 hours so late subscribers can catch up
+cache-duration: "24h"
+
+# Store cached messages in a SQLite database
+cache-file: "/var/cache/ntfy/cache.db"

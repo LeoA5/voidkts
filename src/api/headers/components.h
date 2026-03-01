@@ -1,5 +1,5 @@
-#ifndef OATCOMPONENTS_H
-#define OATCOMPONENTS_H
+#ifndef COMPONENTS_H
+#define COMPONENTS_H
 
 #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
 

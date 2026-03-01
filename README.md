@@ -29,3 +29,17 @@ As specified in the limitaions section, the intention of this framework is to bu
       }
     }
 
+## Configuring Ntfy & Uptime-Kuma
+Ntfy and Uptime images are also included for systems monitoring and alerts, but they'll need users, notification channels, and monitors to be configured manually after the initial setup.
+
+An example config would be something like
+  
+    # Create a deliverer with write-only permissions on the specified topic
+    docker exec -it ntfy ntfy user add --role=user alertbot
+    docker exec -it ntfy ntfy access alertbot voidkts_alerts write
+
+    # Create an end-user with read-only permissions on the specified topic
+    docker exec -it ntfy ntfy user add --role=user User
+    docker exec -it ntfy ntfy access User voidkts_alerts read
+
+Then, on Uptime, you can configure a monitor to listen over http on endpoints such as http://caddy:80, or http://api:9000/hello, or TCP for Postgres, and use the native Ntfy notifications engine, configured with the alertbot credentials on the voidkts_alerts topic, to send notifications for key systems statuses.

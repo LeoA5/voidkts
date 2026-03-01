@@ -1,5 +1,5 @@
-#ifndef MARIADB_H
-#define MARIADB_H
+#ifndef POSTGRESQL_H
+#define POSTGRESQL_H
 
 #include "oatpp/orm/DbClient.hpp"
 #include "oatpp/core/macro/codegen.hpp"
