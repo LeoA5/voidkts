@@ -5,8 +5,7 @@ import upstreams.caddy
 }
 
 # Modify this to include any other domains or ip addresses as desired
-localhost, leoas5nixosdesktop.tail9e4ecb.ts.net {
-    tls internal
+localhost {
     import test
     root * /srv
     file_server
