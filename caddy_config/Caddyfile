@@ -1,5 +1,8 @@
 # Main site
 :80 {
+
+    redir /voidkts /voidkts/
+
     handle /voidkts/* {
         root * /srv
         file_server
