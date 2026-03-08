@@ -39,7 +39,8 @@ services:
 
   # Web server
   caddy:
-    image: docker.io/caddy:2.11
+    build:
+      context: ./caddy_config
     container_name: caddy
     restart: unless-stopped
     ports:
