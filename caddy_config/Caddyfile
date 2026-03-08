@@ -1,15 +1,11 @@
-import upstreams.caddy
-
+# Main site
 :80 {
-    respond "OK" 200
-}
-
-# Modify this to include any other domains or ip addresses as desired
-localhost {
-    import test
     root * /srv
     file_server
 
+    handle /health {
+        respond "OK" 200
+    }
     handle /api/* {
         uri strip_prefix /api
         reverse_proxy api:9000

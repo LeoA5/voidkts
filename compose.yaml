@@ -50,7 +50,7 @@ services:
     container_name: caddy
     restart: unless-stopped
     ports:
-      - "8443:443"
+      - "8443:80"
     volumes:
     - ./caddy_config:/etc/caddy/
     - ./src/frontend:/srv
