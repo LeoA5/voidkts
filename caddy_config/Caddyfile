@@ -1,7 +1,6 @@
 # Main site
 :80 {
     root * /srv
-    file_server
 
     handle /health {
         respond "OK" 200
@@ -10,4 +9,6 @@
         uri strip_prefix /api
         reverse_proxy api:9000
     }
+
+    file_server
 }
